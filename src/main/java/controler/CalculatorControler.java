@@ -1,12 +1,11 @@
 package controler;
 
+import java.util.ArrayList;
 import javafx.event.EventHandler;
 import model.CalculatorModel;
 import view.CalculatorGUI;
-import java.util.EventListener;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 
 public class CalculatorControler implements EventHandler<ActionEvent>, CalculatorControlerInterface
 {
@@ -21,9 +20,8 @@ public class CalculatorControler implements EventHandler<ActionEvent>, Calculato
     @Override
     public void handle(ActionEvent event) 
     {
-        Object boutton = event.getSource();
-        Button b = (Button) boutton;
-        String texte = b.getText();
+        Button button = (Button) event.getSource();
+        String texte = button.getText();
         String lu = gui.LireEcran();
     
         if(texte.equals("push"))
@@ -147,7 +145,7 @@ public class CalculatorControler implements EventHandler<ActionEvent>, Calculato
     @Override
      public void actualiseMemoire()
     {
-        gui.setMemoire(model.pile);
+        gui.setMemoire(new ArrayList<>(model.pile));
     }
   
 

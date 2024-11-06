@@ -74,7 +74,6 @@ public class CalculatorGUI extends Application implements CalculatorGUIInterface
         gp.add(memoire, 3, 1);
  
         // Ajout et positionnement des bouttons sur ma calculatrice
-             
         gp.add(B0,1,2);
         gp.add(B1,2,2);
         gp.add(B2,3,2);
@@ -96,73 +95,17 @@ public class CalculatorGUI extends Application implements CalculatorGUIInterface
         gp.add(Bdrop,3,6);
         gp.add(Bswap,4,6);
         
-        // Esthétisme des boutons
-        B0.setPrefWidth(180); // Largeur de 180 pixels
-        B0.setPrefHeight(100); // Hauteur de 100 pixels
-        B1.setPrefWidth(180); 
-        B1.setPrefHeight(100); 
-        B2.setPrefWidth(180); 
-        B2.setPrefHeight(100);
-        B3.setPrefWidth(180); 
-        B3.setPrefHeight(100);
-        B4.setPrefWidth(180); 
-        B4.setPrefHeight(100); 
-        B5.setPrefWidth(180);
-        B5.setPrefHeight(100);
-        B6.setPrefWidth(180);
-        B6.setPrefHeight(100); 
-        B7.setPrefWidth(180); 
-        B7.setPrefHeight(100); 
-        B8.setPrefWidth(180);
-        B8.setPrefHeight(100); 
-        B9.setPrefWidth(180); 
-        B9.setPrefHeight(100); 
-        Bpoint.setPrefWidth(180); 
-        Bpoint.setPrefHeight(100); 
-        Bentrée.setPrefWidth(180); 
-        Bentrée.setPrefHeight(100); 
-        Baddition.setPrefWidth(180); 
-        Baddition.setPrefHeight(100);
-        Bsoustraction.setPrefWidth(180); 
-        Bsoustraction.setPrefHeight(100); 
-        Bmultiplication.setPrefWidth(180); 
-        Bmultiplication.setPrefHeight(100); 
-        Bdivision.setPrefWidth(180);
-        Bdivision.setPrefHeight(100); 
-        Bopposite.setPrefWidth(180); 
-        Bopposite.setPrefHeight(100);
-        Bclear.setPrefWidth(180); 
-        Bclear.setPrefHeight(100); 
-        Bdrop.setPrefWidth(180); 
-        Bdrop.setPrefHeight(100); 
-        Bswap.setPrefWidth(180); 
-        Bswap.setPrefHeight(100);
-
-    CalculatorModel model = new CalculatorModel();       
-    CalculatorControler controler = new CalculatorControler(this, model);
-
-        B0.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        B1.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        B2.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        B3.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        B4.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        B5.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        B6.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        B7.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        B8.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        B9.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Bpoint.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Bentrée.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Baddition.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Bsoustraction.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Bmultiplication.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Bdivision.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Bopposite.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Bclear.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Bswap.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Bdrop.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Bpop.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e)); 
-
+        CalculatorModel model = new CalculatorModel();       
+        CalculatorControler controler = new CalculatorControler(this, model);
+        
+        //Gestion de la réaction aux clics et de l'ésthétisme des boutons.
+        List<Button> buttons = List.of(B0, B1, B2, B3, B4, B5, B6, B7, B8, B9, Bpoint, Bentrée, Baddition, Bsoustraction, Bmultiplication, Bdivision, Bopposite, Bclear, Bswap, Bdrop, Bpop);
+        for (Button button : buttons) {
+            button.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
+            button.setPrefWidth(180); // Largeur de 180 pixels
+            button.setPrefHeight(100); // Hauteur de 100 pixels
+        }
+        
         
         // Création la scène comprenant la grille
         Scene sc = new Scene(gp, 770, 570);
@@ -209,7 +152,7 @@ public class CalculatorGUI extends Application implements CalculatorGUIInterface
 	 */
 	public void setMemoire(List<Double> stackData) {
 		this.memoire.setText(String.valueOf(stackData));
-		
+
 	}
 }
     
