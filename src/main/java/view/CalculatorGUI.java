@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package view;
 
 import java.util.List;
@@ -50,49 +45,36 @@ public class CalculatorGUI extends Application implements CalculatorGUIInterface
     @Override
     public void start(Stage stage)
     {
-        // Etape I : Affectation d'un nom pour ma calculatrice
-        stage.setTitle("Luna Calculette");
+        // Nom de la fenêtre
+        stage.setTitle("Calculette");
             
-        
-        
-        // Etape II : Création d'un gestionnaire pour organiser et placer les éléments de ma calculatrice
+        //Disposition des éléments sous forme d'une grille
         GridPane gp = new GridPane();
         
-        // Réglage (esthétique) de l'écart entre les éléments de ma calculatrice
+        // Réglage esthétique
         gp.setHgap(10);
         gp.setVgap(10);
         
-        // Etape III : Création d'un ecran pour ma calculatrice
         
-        // Réglage (esthétique) de la position de l'écran sur ma calculatrice
+        // Place prise par l'écran de la calculatrice
         GridPane.setColumnSpan(ecran, 2); // S'étend sur 2 colonnes
         
-        // Règlage (esthétique) de la taille de l'écran de ma calculatrice
+        // Règlage esthétique
         ecran.setPrefWidth(180); // Largeur de 180 pixels
         ecran.setPrefHeight(100); // Hauteur de 100 pixels
         
-        // Ajout et positionnement de l'écran sur ma calculatrice
+        // Ajout et positionnement de l'écran
         gp.add(ecran,1,1);
         
         
-        
-        // Etape IV : Création d'une mémoire pour ma calculatrice
-        
-        
-        // Réglage (esthétique) de la position de la mémoire sur ma calculatrice
+        // Place prise par la mémoire de la calculatrice
         GridPane.setColumnSpan(memoire, 2); // S'étend sur 2 colonnes
         
-        // Ajout et positionnement de la mémoire sur ma calculatrice
+        // Ajout et positionnement de la mémoire
         gp.add(memoire, 3, 1);
  
-        
-        
-        // Etape VI : Création des boutons de ma calculatrice
-
-        
         // Ajout et positionnement des bouttons sur ma calculatrice
-        
-        
+             
         gp.add(B0,1,2);
         gp.add(B1,2,2);
         gp.add(B2,3,2);
@@ -108,51 +90,56 @@ public class CalculatorGUI extends Application implements CalculatorGUIInterface
         gp.add(Bmultiplication,3,5);
         gp.add(Bdivision,4,5);
         gp.add(Bentrée,3,4);
-        gp.add(Bpoint,4,4); 
-        gp.addRow(5 ,Bopposite  ,Bclear );
-        gp.addRow(6 ,Bswap  ,Bdrop );
-       // gp.addRow(7 ,Bpop  , );
-       /* gp.addRow(0 ,B0 , B1, B2 );
-        gp.addRow(1 ,Bopposite  ,Bclear );
-        gp.addRow(2 ,Bopposite  ,Bclear );
-        gp.addRow(3 ,Bopposite  ,Bclear ); */
+        gp.add(Bpoint,4,4);
+        gp.add(Bopposite,1,6);
+        gp.add(Bclear,2,6);
+        gp.add(Bdrop,3,6);
+        gp.add(Bswap,4,6);
         
-        // Règlage (esthétique) de la taille des boutons de ma calculatrice
+        // Esthétisme des boutons
         B0.setPrefWidth(180); // Largeur de 180 pixels
         B0.setPrefHeight(100); // Hauteur de 100 pixels
-        B1.setPrefWidth(180); // Largeur de 180 pixels
-        B1.setPrefHeight(100); // Hauteur de 100 pixels
-        B2.setPrefWidth(180); // Largeur de 180 pixels
-        B2.setPrefHeight(100); // Hauteur de 100 pixels
-        B3.setPrefWidth(180); // Largeur de 180 pixels
-        B3.setPrefHeight(100); // Hauteur de 100 pixels
-        B4.setPrefWidth(180); // Largeur de 180 pixels
-        B4.setPrefHeight(100); // Hauteur de 100 pixels
-        B5.setPrefWidth(180); // Largeur de 180 pixels
-        B5.setPrefHeight(100); // Hauteur de 100 pixels
-        B6.setPrefWidth(180); // Largeur de 180 pixels
-        B6.setPrefHeight(100); // Hauteur de 100 pixels
-        B7.setPrefWidth(180); // Largeur de 180 pixels
-        B7.setPrefHeight(100); // Hauteur de 100 pixels
-        B8.setPrefWidth(180); // Largeur de 180 pixels
-        B8.setPrefHeight(100); // Hauteur de 100 pixels
-        B9.setPrefWidth(180); // Largeur de 180 pixels
-        B9.setPrefHeight(100); // Hauteur de 100 pixels
-        Bpoint.setPrefWidth(180); // Largeur de 180 pixels
-        Bpoint.setPrefHeight(100); // Hauteur de 100 pixels
-        Bentrée.setPrefWidth(180); // Largeur de 180 pixels
-        Bentrée.setPrefHeight(100); // Hauteur de 100 pixels
-        Baddition.setPrefWidth(180); // Largeur de 180 pixels
-        Baddition.setPrefHeight(100); // Hauteur de 100 pixels
-        Bsoustraction.setPrefWidth(180); // Largeur de 180 pixels
-        Bsoustraction.setPrefHeight(100); // Hauteur de 100 pixels
-        Bmultiplication.setPrefWidth(180); // Largeur de 180 pixels
-        Bmultiplication.setPrefHeight(100); // Hauteur de 100 pixels
-        Bdivision.setPrefWidth(180); // Largeur de 180 pixels
-        Bdivision.setPrefHeight(100); // Hauteur de 100 pixels
+        B1.setPrefWidth(180); 
+        B1.setPrefHeight(100); 
+        B2.setPrefWidth(180); 
+        B2.setPrefHeight(100);
+        B3.setPrefWidth(180); 
+        B3.setPrefHeight(100);
+        B4.setPrefWidth(180); 
+        B4.setPrefHeight(100); 
+        B5.setPrefWidth(180);
+        B5.setPrefHeight(100);
+        B6.setPrefWidth(180);
+        B6.setPrefHeight(100); 
+        B7.setPrefWidth(180); 
+        B7.setPrefHeight(100); 
+        B8.setPrefWidth(180);
+        B8.setPrefHeight(100); 
+        B9.setPrefWidth(180); 
+        B9.setPrefHeight(100); 
+        Bpoint.setPrefWidth(180); 
+        Bpoint.setPrefHeight(100); 
+        Bentrée.setPrefWidth(180); 
+        Bentrée.setPrefHeight(100); 
+        Baddition.setPrefWidth(180); 
+        Baddition.setPrefHeight(100);
+        Bsoustraction.setPrefWidth(180); 
+        Bsoustraction.setPrefHeight(100); 
+        Bmultiplication.setPrefWidth(180); 
+        Bmultiplication.setPrefHeight(100); 
+        Bdivision.setPrefWidth(180);
+        Bdivision.setPrefHeight(100); 
+        Bopposite.setPrefWidth(180); 
+        Bopposite.setPrefHeight(100);
+        Bclear.setPrefWidth(180); 
+        Bclear.setPrefHeight(100); 
+        Bdrop.setPrefWidth(180); 
+        Bdrop.setPrefHeight(100); 
+        Bswap.setPrefWidth(180); 
+        Bswap.setPrefHeight(100);
 
     CalculatorModel model = new CalculatorModel();       
-    CalculatorControler controler = new CalculatorControler(this, model); // Assurez-vous d'avoir déjà créé votre modèle (model) et déclaré "this" comme votre vue (CalculatorGUI).
+    CalculatorControler controler = new CalculatorControler(this, model);
 
         B0.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
         B1.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
@@ -169,19 +156,23 @@ public class CalculatorGUI extends Application implements CalculatorGUIInterface
         Baddition.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
         Bsoustraction.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
         Bmultiplication.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
-        Bdivision.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e)); 
-        
-        // Etape VIII : Ajout du gestionnaire contenant l'écran et les boutons à ma scène
-        Scene sc = new Scene(gp, 770, 570);
+        Bdivision.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
+        Bopposite.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
+        Bclear.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
+        Bswap.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
+        Bdrop.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e));
+        Bpop.addEventHandler(ActionEvent.ACTION, e -> controler.handle(e)); 
 
         
-        
-        // Etape IX : Ajout de ma scène à ma calculatrice
+        // Création la scène comprenant la grille
+        Scene sc = new Scene(gp, 770, 570);
+
+      
+        // Ajout de la scène à la fenêtre
         stage.setScene(sc);
         
         
-        
-        // Etape X : Affichage de ma calculatrice
+        // Affichage
         stage.show(); 
 
     }
@@ -191,9 +182,8 @@ public class CalculatorGUI extends Application implements CalculatorGUIInterface
         launch(args);
     }
 
-
 	/**
-	 * @return the ecran
+	 * @return 
 	 */
 	public String LireEcran() {
 		return this.ecran.getText();
@@ -207,15 +197,13 @@ public class CalculatorGUI extends Application implements CalculatorGUIInterface
 		this.ecran.setText(string);
 	}
 
-
 	/**
 	 * @return the memoire
 	 */
 	public Label getMemoire() {
 		return memoire;
 	}
-
-
+        
 	/**
 	 * @param memoire the memoire to set
 	 */
